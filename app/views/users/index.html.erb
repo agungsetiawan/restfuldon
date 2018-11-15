@@ -1,21 +1,27 @@
-<table>
-  <tr>
-    <td>Name</td>
-    <td>Username</td>
-    <td>Email</td>
-    <td>Admin</td>
-    <td>Action</td>
-  </tr>
-  <% @users.each do |u| %>
-    <tr>
-      <td><%= u.name %></td>
-      <td><%= u.username %></td>
-      <td><%= u.email %></td>
-      <td><%= u.admin? ? "Admin" : "Reguler" %></td>
-      <td>
-        <%= button_to "make admin", grant_admin_user_path(u), method: :put %>
-        <%= button_to "revoke admin", revoke_admin_user_path(u), method: :put %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<div class="columns is-centered">
+  <div class="column is-10-desktop">
+    <table class="table is-hoverable">
+      <tr>
+        <td>Name</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Role</td>
+        <td>Action</td>
+      </tr>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.name %></td>
+          <td><%= u.username %></td>
+          <td><%= u.email %></td>
+          <td><%= u.admin? ? "Admin" : "Reguler" %></td>
+          <td>
+            <div class="buttons">
+              <%= button_to "make admin", grant_admin_user_path(u), method: :put, class: 'button is-small is-success' %>
+              <%= button_to "revoke admin", revoke_admin_user_path(u), method: :put, class: 'button is-small is-warning' %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
