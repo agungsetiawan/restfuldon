@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This simple app is used to show how to refactor non restful route to restful route in Ruby on Rails. You can find the article where I explain it at https://agung-setiawan.com/restful-route-di-ruby-on-rails-done-right/ (in Indonesia).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The study case is using granting and revoking a user as an admin or the other way around as an example. From using custom controller action on `UsersController` to create separate `AdminsController` with its standar restful actions.
