@@ -16,8 +16,8 @@
           <td><%= u.admin? ? "Admin" : "Reguler" %></td>
           <td>
             <div class="buttons">
-              <%= button_to "make admin", grant_admin_user_path(u), method: :put, class: 'button is-small is-success' %>
-              <%= button_to "revoke admin", revoke_admin_user_path(u), method: :put, class: 'button is-small is-warning' %>
+              <%= button_to "make admin", user_admins_path(u), class: 'button is-small is-success' %>
+              <%= button_to "revoke admin", user_admins_path(u), method: :delete, class: 'button is-small is-warning' %>
             </div>
           </td>
         </tr>
